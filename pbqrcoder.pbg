@@ -1,0 +1,23 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "pbqrcoder.pbl" "";
+@end;
+@begin Objects
+ "s_point.srs" "pbqrcoder.pbl";
+ "s_codewordblock.srs" "pbqrcoder.pbl";
+ "s_versioninfodetails.srs" "pbqrcoder.pbl";
+ "s_qr_rectangle.srs" "pbqrcoder.pbl";
+ "n_cst_qrcode_dwsrv.sru" "pbqrcoder.pbl";
+ "n_cst_qrcoder.sru" "pbqrcoder.pbl";
+ "f_printqrmatrixline.srf" "pbqrcoder.pbl";
+ "s_alignmentpattern.srs" "pbqrcoder.pbl";
+ "n_cst_qrcode.sru" "pbqrcoder.pbl";
+ "s_versioninfo.srs" "pbqrcoder.pbl";
+ "s_polynomitem.srs" "pbqrcoder.pbl";
+ "s_alphanumentry.srs" "pbqrcoder.pbl";
+ "s_capacityentry.srs" "pbqrcoder.pbl";
+ "s_antilog.srs" "pbqrcoder.pbl";
+ "s_eccinfo.srs" "pbqrcoder.pbl";
+ "s_polynom.srs" "pbqrcoder.pbl";
+ "s_bitarray.srs" "pbqrcoder.pbl";
+@end;
