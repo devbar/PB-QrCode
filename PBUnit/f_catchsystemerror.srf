@@ -1,0 +1,30 @@
+HA$PBExportHeader$f_catchsystemerror.srf
+$PBExportComments$Catch the system error and send it on to the current test.
+global type f_catchsystemerror from function_object
+end type
+
+forward prototypes
+global function integer f_catchsystemerror ()
+end prototypes
+
+global function integer f_catchsystemerror ();// Add this function to your system error event.  If it returns 1, do not close the application.
+// This function can be used without having the PBUnit framework in your library list.  
+// If the framework is not in your library list, it will return a 0
+
+PowerObject	lnv_testResult
+PowerObject	lnv_currentTestCase
+
+if isValid(findClassDefinition("TestResult")) then
+	lnv_testResult = create using "TestResult"
+	lnv_currentTestCase = lnv_testResult.dynamic getCurrentTestCase()
+	if isValid(lnv_currentTestCase) then
+		lnv_currentTestCase.dynamic error(error)
+ 
+		return 1
+ 
+	end if
+end if
+
+return 0
+end function
+
