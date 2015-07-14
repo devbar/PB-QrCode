@@ -1,0 +1,7 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "Tests\\pbqrcoder_tests.pbl" "";
+@end;
+@begin Objects
+ "Tests\\n_cst_test_qrcode.sru" "Tests\\pbqrcoder_tests.pbl";
+@end;
