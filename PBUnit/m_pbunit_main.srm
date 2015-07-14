@@ -1,0 +1,397 @@
+HA$PBExportHeader$m_pbunit_main.srm
+forward
+global type m_pbunit_main from menu
+end type
+type m_file from menu within m_pbunit_main
+end type
+type m_opentarget from menu within m_file
+end type
+type m_- from menu within m_file
+end type
+type m_recenttargets from menu within m_file
+end type
+type m_recenttarget1 from menu within m_recenttargets
+end type
+type m_recenttarget2 from menu within m_recenttargets
+end type
+type m_recenttarget3 from menu within m_recenttargets
+end type
+type m_recenttarget4 from menu within m_recenttargets
+end type
+type m_recenttarget5 from menu within m_recenttargets
+end type
+type m_recenttargets from menu within m_file
+m_recenttarget1 m_recenttarget1
+m_recenttarget2 m_recenttarget2
+m_recenttarget3 m_recenttarget3
+m_recenttarget4 m_recenttarget4
+m_recenttarget5 m_recenttarget5
+end type
+type m_-1 from menu within m_file
+end type
+type m_exit from menu within m_file
+end type
+type m_file from menu within m_pbunit_main
+m_opentarget m_opentarget
+m_- m_-
+m_recenttargets m_recenttargets
+m_-1 m_-1
+m_exit m_exit
+end type
+type m_test from menu within m_pbunit_main
+end type
+type m_runselected from menu within m_test
+end type
+type m_runall from menu within m_test
+end type
+type m_test from menu within m_pbunit_main
+m_runselected m_runselected
+m_runall m_runall
+end type
+type m_help from menu within m_pbunit_main
+end type
+type m_about from menu within m_help
+end type
+type m_help from menu within m_pbunit_main
+m_about m_about
+end type
+global type m_pbunit_main from menu
+m_file m_file
+m_test m_test
+m_help m_help
+end type
+end forward
+
+global type m_pbunit_main from menu
+m_file m_file
+m_test m_test
+m_help m_help
+end type
+global m_pbunit_main m_pbunit_main
+
+forward prototypes
+public subroutine of_add_new_recent_target (string as_targetfile)
+end prototypes
+
+public subroutine of_add_new_recent_target (string as_targetfile);
+// shift over old items, 4->5, 3->4, 2->3,1-2
+
+// add new target to item 1
+end subroutine
+
+on m_pbunit_main.create
+m_pbunit_main=this
+call super::create
+this.text = "m_pbunit_main"
+this.m_file=create m_file
+this.m_test=create m_test
+this.m_help=create m_help
+this.Item[UpperBound(this.Item)+1]=this.m_file
+this.Item[UpperBound(this.Item)+1]=this.m_test
+this.Item[UpperBound(this.Item)+1]=this.m_help
+end on
+
+on m_pbunit_main.destroy
+call super::destroy
+destroy(this.m_file)
+destroy(this.m_test)
+destroy(this.m_help)
+end on
+
+event clicked;close(parentwindow)
+end event
+
+type m_file from menu within m_pbunit_main
+m_opentarget m_opentarget
+m_- m_-
+m_recenttargets m_recenttargets
+m_-1 m_-1
+m_exit m_exit
+end type
+
+on m_file.create
+call super::create
+this.text = "&File"
+this.m_opentarget=create m_opentarget
+this.m_-=create m_-
+this.m_recenttargets=create m_recenttargets
+this.m_-1=create m_-1
+this.m_exit=create m_exit
+this.Item[UpperBound(this.Item)+1]=this.m_opentarget
+this.Item[UpperBound(this.Item)+1]=this.m_-
+this.Item[UpperBound(this.Item)+1]=this.m_recenttargets
+this.Item[UpperBound(this.Item)+1]=this.m_-1
+this.Item[UpperBound(this.Item)+1]=this.m_exit
+end on
+
+on m_file.destroy
+call super::destroy
+destroy(this.m_opentarget)
+destroy(this.m_-)
+destroy(this.m_recenttargets)
+destroy(this.m_-1)
+destroy(this.m_exit)
+end on
+
+type m_opentarget from menu within m_file
+end type
+
+on m_opentarget.create
+call super::create
+this.text = "Open Target ... ~tCtrl+O"
+this.shortcut = 335
+end on
+
+on m_opentarget.destroy
+call super::destroy
+end on
+
+event clicked;parentwindow.dynamic of_settarget( "" )
+parentwindow.dynamic event ue_target()
+end event
+
+type m_- from menu within m_file
+end type
+
+on m_-.create
+call super::create
+this.text = "-"
+end on
+
+on m_-.destroy
+call super::destroy
+end on
+
+type m_recenttargets from menu within m_file
+m_recenttarget1 m_recenttarget1
+m_recenttarget2 m_recenttarget2
+m_recenttarget3 m_recenttarget3
+m_recenttarget4 m_recenttarget4
+m_recenttarget5 m_recenttarget5
+end type
+
+on m_recenttargets.create
+call super::create
+this.text = "Recent Targets"
+this.m_recenttarget1=create m_recenttarget1
+this.m_recenttarget2=create m_recenttarget2
+this.m_recenttarget3=create m_recenttarget3
+this.m_recenttarget4=create m_recenttarget4
+this.m_recenttarget5=create m_recenttarget5
+this.Item[UpperBound(this.Item)+1]=this.m_recenttarget1
+this.Item[UpperBound(this.Item)+1]=this.m_recenttarget2
+this.Item[UpperBound(this.Item)+1]=this.m_recenttarget3
+this.Item[UpperBound(this.Item)+1]=this.m_recenttarget4
+this.Item[UpperBound(this.Item)+1]=this.m_recenttarget5
+end on
+
+on m_recenttargets.destroy
+call super::destroy
+destroy(this.m_recenttarget1)
+destroy(this.m_recenttarget2)
+destroy(this.m_recenttarget3)
+destroy(this.m_recenttarget4)
+destroy(this.m_recenttarget5)
+end on
+
+type m_recenttarget1 from menu within m_recenttargets
+end type
+
+on m_recenttarget1.create
+call super::create
+this.text = "Recent Target 1"
+end on
+
+on m_recenttarget1.destroy
+call super::destroy
+end on
+
+event clicked;parentwindow.dynamic of_settarget( this.text )
+parentwindow.dynamic event ue_target()
+end event
+
+type m_recenttarget2 from menu within m_recenttargets
+end type
+
+on m_recenttarget2.create
+call super::create
+this.text = "Recent Target 2"
+end on
+
+on m_recenttarget2.destroy
+call super::destroy
+end on
+
+event clicked;if this.text = "" then return
+ 
+parentwindow.dynamic of_settarget( this.text )
+parentwindow.dynamic event ue_target()
+end event
+
+type m_recenttarget3 from menu within m_recenttargets
+end type
+
+on m_recenttarget3.create
+call super::create
+this.text = "Recent Target 3"
+end on
+
+on m_recenttarget3.destroy
+call super::destroy
+end on
+
+event clicked;if this.text = "" then return
+
+ 
+parentwindow.dynamic of_settarget( this.text )
+parentwindow.dynamic event ue_target()
+end event
+
+type m_recenttarget4 from menu within m_recenttargets
+end type
+
+on m_recenttarget4.create
+call super::create
+this.text = "Recent Target 4"
+end on
+
+on m_recenttarget4.destroy
+call super::destroy
+end on
+
+event clicked;if this.text = "" then return
+
+ 
+parentwindow.dynamic of_settarget( this.text )
+parentwindow.dynamic event ue_target()
+end event
+
+type m_recenttarget5 from menu within m_recenttargets
+end type
+
+on m_recenttarget5.create
+call super::create
+this.text = "Recent Target 5"
+end on
+
+on m_recenttarget5.destroy
+call super::destroy
+end on
+
+event clicked;if this.text = "" then return
+ 
+
+parentwindow.dynamic of_settarget( this.text )
+parentwindow.dynamic event ue_target()
+end event
+
+type m_-1 from menu within m_file
+end type
+
+on m_-1.create
+call super::create
+this.text = "-"
+end on
+
+on m_-1.destroy
+call super::destroy
+end on
+
+type m_exit from menu within m_file
+end type
+
+on m_exit.create
+call super::create
+this.text = "E&xit"
+end on
+
+on m_exit.destroy
+call super::destroy
+end on
+
+event clicked;close(parentwindow)
+end event
+
+type m_test from menu within m_pbunit_main
+m_runselected m_runselected
+m_runall m_runall
+end type
+
+on m_test.create
+call super::create
+this.text = "&Test"
+this.m_runselected=create m_runselected
+this.m_runall=create m_runall
+this.Item[UpperBound(this.Item)+1]=this.m_runselected
+this.Item[UpperBound(this.Item)+1]=this.m_runall
+end on
+
+on m_test.destroy
+call super::destroy
+destroy(this.m_runselected)
+destroy(this.m_runall)
+end on
+
+type m_runselected from menu within m_test
+end type
+
+on m_runselected.create
+call super::create
+this.text = "Run Selected~tF6"
+this.shortcut = 117
+end on
+
+on m_runselected.destroy
+call super::destroy
+end on
+
+event clicked;parentwindow.dynamic event ue_run()
+end event
+
+type m_runall from menu within m_test
+end type
+
+on m_runall.create
+call super::create
+this.text = "Run All~tF5"
+this.shortcut = 116
+end on
+
+on m_runall.destroy
+call super::destroy
+end on
+
+event clicked;parentwindow.dynamic event ue_runall()
+end event
+
+type m_help from menu within m_pbunit_main
+m_about m_about
+end type
+
+on m_help.create
+call super::create
+this.text = "Help"
+this.m_about=create m_about
+this.Item[UpperBound(this.Item)+1]=this.m_about
+end on
+
+on m_help.destroy
+call super::destroy
+destroy(this.m_about)
+end on
+
+type m_about from menu within m_help
+end type
+
+on m_about.create
+call super::create
+this.text = "About ..."
+end on
+
+on m_about.destroy
+call super::destroy
+end on
+
+event clicked;parentwindow.dynamic event ue_about()
+end event
+
