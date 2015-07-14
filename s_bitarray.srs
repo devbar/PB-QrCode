@@ -1,0 +1,5 @@
+HA$PBExportHeader$s_bitarray.srs
+global type s_bitarray from structure
+	boolean		bits[]
+end type
+

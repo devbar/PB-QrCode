@@ -1,0 +1,6 @@
+HA$PBExportHeader$s_alphanumentry.srs
+global type s_alphanumentry from structure
+		character		Character
+	long		Index
+end type
+

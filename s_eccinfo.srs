@@ -1,0 +1,12 @@
+HA$PBExportHeader$s_eccinfo.srs
+global type s_eccinfo from structure
+	long		Version
+	character		EccLevel
+	long		TotalDataCodewords
+	long		ECCPerBlock
+	long		BlocksInGroup1
+	long		CodewordsInGroup1
+	long		BlocksInGroup2
+	long		CodewordsInGroup2
+end type
+

@@ -1,0 +1,8 @@
+HA$PBExportHeader$s_qr_rectangle.srs
+global type s_qr_rectangle from structure
+	long		x
+	long		y
+	long		width
+	long		height
+end type
+

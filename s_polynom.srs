@@ -1,0 +1,5 @@
+HA$PBExportHeader$s_polynom.srs
+global type s_polynom from structure
+	s_polynomitem		items[]
+end type
+

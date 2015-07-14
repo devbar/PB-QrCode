@@ -1,0 +1,6 @@
+HA$PBExportHeader$s_capacityentry.srs
+global type s_capacityentry from structure
+	integer		encoding
+	long		capacity
+end type
+

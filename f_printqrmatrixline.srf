@@ -1,0 +1,25 @@
+HA$PBExportHeader$f_printqrmatrixline.srf
+global type f_printqrmatrixline from function_object
+end type
+
+forward prototypes
+global function string f_printqrmatrixline (s_bitarray astra_matrix[], long al_row)
+end prototypes
+
+global function string f_printqrmatrixline (s_bitarray astra_matrix[], long al_row);long		ll_count, ll_index
+string	ls_result
+
+ll_count = upperBound(astra_matrix)
+if al_row < 0 or al_row > ll_count then return ""
+
+for ll_index = 1 to ll_count
+	if astra_matrix[al_row].bits[ll_index] then
+		ls_result += "1"
+	else
+		ls_result += "0"
+	end if
+next
+
+return ls_result
+end function
+

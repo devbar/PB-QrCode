@@ -1,0 +1,6 @@
+HA$PBExportHeader$s_alignmentpattern.srs
+global type s_alignmentpattern from structure
+	long		version
+	s_point		patternpositions[]
+end type
+

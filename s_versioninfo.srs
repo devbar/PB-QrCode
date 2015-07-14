@@ -1,0 +1,6 @@
+HA$PBExportHeader$s_versioninfo.srs
+global type s_versioninfo from structure
+	long		version
+	s_versioninfodetails		details[]
+end type
+

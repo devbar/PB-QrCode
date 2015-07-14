@@ -1,0 +1,6 @@
+HA$PBExportHeader$s_polynomitem.srs
+global type s_polynomitem from structure
+	long		Coefficient
+	long		Exponent
+end type
+

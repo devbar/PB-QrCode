@@ -1,0 +1,6 @@
+HA$PBExportHeader$s_antilog.srs
+global type s_antilog from structure
+	long		ExponentAlpha
+	long		IntegerValue
+end type
+

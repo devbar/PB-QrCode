@@ -1,0 +1,6 @@
+HA$PBExportHeader$s_versioninfodetails.srs
+global type s_versioninfodetails from structure
+	character		errorcorrectionlevel
+	s_capacityentry		capacitydict[]
+end type
+

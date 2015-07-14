@@ -1,0 +1,9 @@
+HA$PBExportHeader$s_codewordblock.srs
+global type s_codewordblock from structure
+	long		GroupNumber
+	long		BlockNumber
+	string		BitString
+	string		CodeWords[]
+	string		ECCWords[]
+end type
+

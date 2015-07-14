@@ -1,0 +1,6 @@
+HA$PBExportHeader$s_point.srs
+global type s_point from structure
+	long		x
+	long		y
+end type
+
