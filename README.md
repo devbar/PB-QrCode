@@ -1,6 +1,7 @@
 # PB-QrCode
 This is an adaption of the simple QrCoder module (originally created by Raffael Herrmann) for PowerBuilder.
-![ScreenShot](./Screenshot/Screen01.png)
+
+![ScreenShot](./Screenshots/Screen01.png)
 
 ## Legal information and credits
 QRCoder is project by [Raffael Herrmann](http://raffaelherrmann.de) and was first released 
