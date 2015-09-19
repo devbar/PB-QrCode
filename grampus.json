@@ -1,0 +1,15 @@
+{
+  "name": "devbar-qrcode",
+  "description": "This is an adaption of the simple QrCoder module (originally created by Raffael Herrmann) for PowerBuilder.",
+  "main": [
+    "pbqrcoder.pbl"
+  ],
+  "keywords": [
+    "qrcode",
+	"barcode"
+  ],
+  "authors": [
+    "Benjamin Kemner <benjamin.kemner@devbar.de>"
+  ],
+  "license": "LGPL"
+}
